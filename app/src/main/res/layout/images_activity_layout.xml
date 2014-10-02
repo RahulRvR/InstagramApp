@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridView
+        android:id="@+id/gridImages"
+
+        android:numColumns="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></GridView>
+
+    <ImageView
+        android:id="@+id/zoomView"
+        android:visibility="gone"
+        android:background="@drawable/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
