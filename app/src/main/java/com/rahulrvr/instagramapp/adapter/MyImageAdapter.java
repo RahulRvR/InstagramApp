@@ -52,6 +52,7 @@ public class MyImageAdapter extends BaseAdapter{
         final ImageView imageView = ((ImageView)layoutView.findViewById(R.id.hashtagImage));
 
         textView.setText("Image " + Integer.toString(i));
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

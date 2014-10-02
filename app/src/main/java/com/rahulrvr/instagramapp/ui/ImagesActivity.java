@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.rahulrvr.instagramapp.R;
 import com.rahulrvr.instagramapp.Runnable.GetNextHasTagImagesRunnable;
+import com.rahulrvr.instagramapp.Runnable.MainRunnable;
 import com.rahulrvr.instagramapp.adapter.MyImageAdapter;
 import com.rahulrvr.instagramapp.data.Images;
 import com.rahulrvr.instagramapp.data.Model;
@@ -36,12 +37,9 @@ public class ImagesActivity extends Activity{
         setContentView(R.layout.images_activity_layout);
         getActionBar().setTitle("#" + Model.hashTagString);
         imagesList = new ArrayList<Images>();
-         gridView = (GridView) findViewById(R.id.gridImages);
-
+        gridView = (GridView) findViewById(R.id.gridImages);
         adapter = new MyImageAdapter(getApplicationContext(),imagesList);
-
         gridView.setAdapter(adapter);
-
 
         gridView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
@@ -56,7 +54,7 @@ public class ImagesActivity extends Activity{
                 if(!Model.loading &&  totalItemCount>0 && (totalItemCount - firstVisibleItem) < 10)
                 {
                     Model.loading = true;
-                    new GetNextHasTagImagesRunnable(getApplicationContext()).execute(Model.hashTagString,Model.tag_id);
+                    new GetNextHasTagImagesRunnable(getApplicationContext()).execute(Model.hashTagString, MainRunnable.tag_id);
                 }
 
             }
@@ -100,8 +98,7 @@ public class ImagesActivity extends Activity{
     public void ImagesLoaded(LoadImagesEvent event)
     {
        imagesList.addAll(event.getImagesList());
-        adapter.notifyDataSetChanged();
-
+       adapter.notifyDataSetChanged();
     }
 
     @Subscribe

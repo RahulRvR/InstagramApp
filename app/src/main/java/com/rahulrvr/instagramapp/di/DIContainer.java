@@ -27,8 +27,6 @@ public class DIContainer {
         return container;
     }
 
-
-
     public Bus getEventBus() {
         return eventBus;
     }
@@ -41,9 +39,6 @@ public class DIContainer {
     {
         eventBus = new Bus();
     }
-
-
-
 
 
 }

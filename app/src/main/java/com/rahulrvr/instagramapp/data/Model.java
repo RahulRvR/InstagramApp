@@ -9,5 +9,4 @@ public class Model {
     public static final  String ENDPOINT = "https://api.instagram.com/v1/tags";
     public static  boolean loading = false;
     public static String hashTagString;
-    public static String tag_id;
 }

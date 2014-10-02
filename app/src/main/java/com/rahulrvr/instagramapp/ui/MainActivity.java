@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
-        getActionBar().setTitle("Main");
+        getActionBar().setTitle(getString(R.string.main));
         button = (Button)findViewById(R.id.searchImages);
 
         InputMethodManager iManager = (InputMethodManager)getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);

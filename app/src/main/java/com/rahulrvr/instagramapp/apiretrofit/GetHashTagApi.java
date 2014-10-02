@@ -6,9 +6,7 @@ import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.Query;
 
-/**
- * Created by rvijay004c on 9/30/14.
- */
+
 public interface GetHashTagApi {
 
     @GET("/{hashtag}/media/recent")

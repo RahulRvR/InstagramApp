@@ -15,9 +15,6 @@ public class LoadImagesEvent {
         this.imagesList = imagesList;
     }
 
-
-
-
     public List<Images> getImagesList() {
         return imagesList;
     }
