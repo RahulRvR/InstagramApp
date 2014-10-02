@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -21,6 +22,11 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         DIContainer.getInstance().loadObjects(getApplicationContext());
         animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.splashfade);
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 
 
